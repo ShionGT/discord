@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+```
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Install Discord Bot</title>
+
+<meta
+    name="description"
+    content="Install the Discord Bot Application to your Discord server."
+>
+
+<style>
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-height: 100vh;
+
+        font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Helvetica,
+            Arial,
+            sans-serif;
+
+        background:
+            radial-gradient(
+                circle at top,
+                #20253a 0%,
+                #0f1117 45%
+            );
+
+        color: #e7e9ee;
+        line-height: 1.6;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+        background: rgba(15, 17, 23, 0.88);
+        backdrop-filter: blur(14px);
+
+        border-bottom: 1px solid #282d39;
+    }
+
+    .nav {
+        max-width: 1100px;
+        margin: auto;
+
+        padding: 18px 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: #aeb4c1;
+        font-size: 14px;
+
+        transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: #ffffff;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        max-width: 900px;
+        margin: auto;
+
+        padding: 90px 24px 55px;
+
+        text-align: center;
+    }
+
+    .hero-badge {
+        display: inline-block;
+
+        padding: 6px 12px;
+        margin-bottom: 20px;
+
+        border: 1px solid #343a4b;
+        border-radius: 999px;
+
+        background: #181c26;
+
+        color: #9fa7ff;
+
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .hero h1 {
+        color: #ffffff;
+
+        font-size: clamp(38px, 6vw, 58px);
+        line-height: 1.1;
+
+        margin-bottom: 22px;
+    }
+
+    .hero p {
+        max-width: 680px;
+        margin: auto;
+
+        color: #aeb4c1;
+
+        font-size: 18px;
+    }
+
+
+    /* =====================================================
+       MAIN
+       ===================================================== */
+
+    main {
+        max-width: 1050px;
+        margin: auto;
+
+        padding: 20px 24px 100px;
+    }
+
+
+    /* =====================================================
+       DISCORD INSTALLATION DECK
+       ===================================================== */
+
+    .discord-deck {
+        position: relative;
+
+        overflow: hidden;
+
+        margin: 30px auto 45px;
+
+        max-width: 850px;
+
+        background:
+            linear-gradient(
+                145deg,
+                #1d2130,
+                #151820
+            );
+
+        border: 1px solid #363c4d;
+        border-radius: 18px;
+
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    /*
+     * Decorative Discord-style background glow.
+     */
+
+    .discord-deck::before {
+        content: "";
+
+        position: absolute;
+
+        width: 300px;
+        height: 300px;
+
+        top: -150px;
+        right: -100px;
+
+        border-radius: 50%;
+
+        background: rgba(88, 101, 242, 0.18);
+
+        filter: blur(50px);
+
+        pointer-events: none;
+    }
+
+
+    /* =====================================================
+       DECK HEADER
+       ===================================================== */
+
+    .deck-header {
+        position: relative;
+        z-index: 1;
+
+        padding: 26px 30px;
+
+        display: flex;
+        align-items: center;
+        gap: 18px;
+
+        border-bottom: 1px solid #2c3140;
+    }
+
+    .discord-icon {
+        width: 52px;
+        height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 14px;
+
+        background: #5865f2;
+
+        color: #ffffff;
+
+        font-size: 27px;
+        font-weight: 800;
+    }
+
+    .deck-header h2 {
+        color: #ffffff;
+
+        font-size: 22px;
+    }
+
+    .deck-header p {
+        color: #8f96a5;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       DECK CONTENT
+       ===================================================== */
+
+    .deck-content {
+        position: relative;
+        z-index: 1;
+
+        padding: 32px;
+    }
+
+    .deck-description {
+        margin-bottom: 25px;
+
+        color: #b9beca;
+    }
+
+
+    /* =====================================================
+       PERMISSIONS
+       ===================================================== */
+
+    .permissions {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+        margin-bottom: 30px;
+    }
+
+    .permission {
+        padding: 15px 17px;
+
+        background: #191d26;
+
+        border: 1px solid #292f3d;
+        border-radius: 10px;
+    }
+
+    .permission-title {
+        color: #e6e8ee;
+
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .permission-description {
+        margin-top: 3px;
+
+        color: #858c9b;
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       INSTALL BUTTON
+       ===================================================== */
+
+    .install-area {
+        padding-top: 25px;
+
+        border-top: 1px solid #292f3d;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .install-info strong {
+        display: block;
+
+        color: #ffffff;
+
+        font-size: 15px;
+    }
+
+    .install-info span {
+        color: #858c9b;
+
+        font-size: 12px;
+    }
+
+    .discord-install-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+
+        min-width: 190px;
+
+        padding: 13px 22px;
+
+        border-radius: 8px;
+
+        background: #5865f2;
+
+        color: #ffffff;
+
+        font-size: 15px;
+        font-weight: 700;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .discord-install-button:hover {
+        background: #4752c4;
+
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 8px 25px rgba(88, 101, 242, 0.25);
+    }
+
+    .discord-install-button:active {
+        transform: translateY(0);
+    }
+
+
+    /* =====================================================
+       INFORMATION CARDS
+       ===================================================== */
+
+    .info-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 18px;
+
+        margin-bottom: 45px;
+    }
+
+    .info-card {
+        padding: 25px;
+
+        background: #151820;
+
+        border: 1px solid #282e3a;
+        border-radius: 12px;
+    }
+
+    .info-card h3 {
+        margin-bottom: 8px;
+
+        color: #ffffff;
+
+        font-size: 17px;
+    }
+
+    .info-card p {
+        color: #989fac;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       INSTALLATION STEPS
+       ===================================================== */
+
+    .steps {
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .steps h2 {
+        margin-bottom: 25px;
+
+        color: #ffffff;
+
+        font-size: 28px;
+    }
+
+    .step {
+        display: flex;
+        gap: 18px;
+
+        margin-bottom: 18px;
+
+        padding: 20px;
+
+        background: #151820;
+
+        border: 1px solid #282e3a;
+        border-radius: 12px;
+    }
+
+    .step-number {
+        width: 34px;
+        height: 34px;
+
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: #5865f2;
+
+        color: #ffffff;
+
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .step h3 {
+        margin-bottom: 4px;
+
+        color: #ffffff;
+
+        font-size: 16px;
+    }
+
+    .step p {
+        color: #9299a7;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       SECURITY NOTICE
+       ===================================================== */
+
+    .security-notice {
+        max-width: 850px;
+        margin: 40px auto 0;
+
+        padding: 20px;
+
+        border: 1px solid #383e4c;
+        border-radius: 12px;
+
+        background: #181c25;
+    }
+
+    .security-notice strong {
+        color: #ffffff;
+    }
+
+    .security-notice p {
+        margin-top: 5px;
+
+        color: #989fac;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+        padding: 40px 24px;
+
+        border-top: 1px solid #282d38;
+
+        text-align: center;
+
+        color: #747b89;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media (max-width: 750px) {
+
+        .nav {
+            padding: 15px 18px;
+        }
+
+        .nav-links {
+            gap: 12px;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+        }
+
+        .hero {
+            padding: 65px 20px 40px;
+        }
+
+        main {
+            padding: 10px 15px 70px;
+        }
+
+        .deck-header {
+            padding: 22px;
+        }
+
+        .deck-content {
+            padding: 22px;
+        }
+
+        .permissions {
+            grid-template-columns: 1fr;
+        }
+
+        .install-area {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .discord-install-button {
+            width: 100%;
+        }
+
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================== -->
+
+<header>
+
+```
+<nav class="nav">
+
+    <div class="logo">
+        Discord Bot Application
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="#installation">
+                Installation
+            </a>
+        </li>
+
+        <li>
+            <a href="index.html#terms">
+                Terms
+            </a>
+        </li>
+
+        <li>
+            <a href="index.html#privacy">
+                Privacy
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+```
+
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================== -->
+
+<section class="hero">
+
+```
+<div class="hero-badge">
+    Discord Application Installation
+</div>
+
+<h1>
+    Add the Bot to Your Server
+</h1>
+
+<p>
+    Connect the Discord Bot Application to your server
+    and start using its features.
+</p>
+```
+
+</section>
+
+<main>
+
+```
+<!-- =====================================================
+     DISCORD INSTALLATION DECK
+====================================================== -->
+
+<section
+    id="installation"
+    class="discord-deck"
+>
+
+    <div class="deck-header">
+
+        <div class="discord-icon">
+            D
+        </div>
+
+        <div>
+
+            <h2>
+                Install Discord Application
+            </h2>
+
+            <p>
+                Official Discord authorization
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="deck-content">
+
+        <p class="deck-description">
+
+            Click the button below to open Discord's
+            official authorization page. You will be able
+            to select the server where you want to install
+            the application.
+
+        </p>
+
+
+        <!-- Requested permission summary -->
+
+        <div class="permissions">
+
+            <div class="permission">
+
+                <div class="permission-title">
+                    Bot
+                </div>
+
+                <div class="permission-description">
+                    Install the application as a Discord bot.
+                </div>
+
+            </div>
+
+
+            <div class="permission">
+
+                <div class="permission-title">
+                    Slash Commands
+                </div>
+
+                <div class="permission-description">
+                    Enables Discord application commands.
+                </div>
+
+            </div>
+
+
+            <div class="permission">
+
+                <div class="permission-title">
+                    Requested Permissions
+                </div>
+
+                <div class="permission-description">
+                    Permission value: 274878286912
+                </div>
+
+            </div>
+
+
+            <div class="permission">
+
+                <div class="permission-title">
+                    Server Authorization
+                </div>
+
+                <div class="permission-description">
+                    Discord will ask you to select a server.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Install button -->
+
+        <div class="install-area">
+
+            <div class="install-info">
+
+                <strong>
+                    Ready to install?
+                </strong>
+
+                <span>
+                    You will be redirected to Discord.
+                </span>
+
+            </div>
+
+
+            <a
+                class="discord-install-button"
+                href="https://discord.com/oauth2/authorize?client_id=1544682128099254432&scope=bot+applications.commands&permissions=274878286912"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <!-- Simple Discord-style icon -->
+
+                <span>
+                    ◆
+                </span>
+
+                Add to Discord
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INFORMATION
+====================================================== -->
+
+<section class="info-grid">
+
+
+    <article class="info-card">
+
+        <h3>
+            1. Choose a Server
+        </h3>
+
+        <p>
+            Discord will ask you to choose which server
+            you want to add the application to.
+        </p>
+
+    </article>
+
+
+    <article class="info-card">
+
+        <h3>
+            2. Review Permissions
+        </h3>
+
+        <p>
+            Review the permissions requested by the
+            application before authorizing it.
+        </p>
+
+    </article>
+
+
+    <article class="info-card">
+
+        <h3>
+            3. Authorize
+        </h3>
+
+        <p>
+            Approve the installation and return to this
+            application when finished.
+        </p>
+
+    </article>
+
+
+</section>
+
+
+<!-- =====================================================
+     INSTALLATION GUIDE
+====================================================== -->
+
+<section class="steps">
+
+    <h2>
+        Installation Guide
+    </h2>
+
+
+    <div class="step">
+
+        <div class="step-number">
+            1
+        </div>
+
+        <div>
+
+            <h3>
+                Click "Add to Discord"
+            </h3>
+
+            <p>
+                The button opens the official Discord
+                authorization page in a new tab.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="step-number">
+            2
+        </div>
+
+        <div>
+
+            <h3>
+                Select Your Server
+            </h3>
+
+            <p>
+                Choose the Discord server where you want
+                to install the bot.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="step-number">
+            3
+        </div>
+
+        <div>
+
+            <h3>
+                Review Permissions
+            </h3>
+
+            <p>
+                Discord will display the permissions that
+                the application requests. Review them
+                carefully before continuing.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="step">
+
+        <div class="step-number">
+            4
+        </div>
+
+        <div>
+
+            <h3>
+                Authorize the Application
+            </h3>
+
+            <p>
+                Complete Discord's authorization process.
+                The bot will then be added to your server
+                if you have sufficient server permissions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     SECURITY NOTICE
+====================================================== -->
+
+<section class="security-notice">
+
+    <strong>
+        Security Notice
+    </strong>
+
+    <p>
+
+        Always verify that the authorization page is
+        hosted on Discord before approving an application.
+        Never provide your Discord password, authentication
+        token, recovery codes, or other credentials to this
+        application.
+
+    </p>
+
+</section>
+```
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer>
+
+```
+<p>
+    © 2026 Discord Bot Application
+</p>
+
+<p>
+    This application is not affiliated with Discord Inc.
+    unless explicitly stated otherwise.
+</p>
+```
+
+</footer>
+
+</body>
+</html>
