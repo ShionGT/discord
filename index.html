@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discord Bot Application - Terms & Privacy</title>
+
+    <meta
+        name="description"
+        content="Terms of Service and Privacy Policy for the Discord Bot Application."
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #0f1117;
+            color: #e6e8ee;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #8ea7ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* -------------------------
+           Header
+        ------------------------- */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(15, 17, 23, 0.92);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #272b36;
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 24px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b9beca;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* -------------------------
+           Hero
+        ------------------------- */
+
+        .hero {
+            max-width: 900px;
+            margin: auto;
+
+            padding: 100px 24px 70px;
+
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 58px);
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .hero p {
+            color: #aeb4c2;
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .notice {
+            margin-top: 35px;
+            padding: 18px 20px;
+
+            background: #181c25;
+            border: 1px solid #2b3140;
+            border-radius: 10px;
+
+            text-align: left;
+            color: #bfc4cf;
+            font-size: 14px;
+        }
+
+        /* -------------------------
+           Main content
+        ------------------------- */
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 24px 100px;
+        }
+
+        .document {
+            background: #151820;
+            border: 1px solid #272c38;
+            border-radius: 14px;
+
+            padding: 40px;
+            margin-bottom: 35px;
+        }
+
+        .document h2 {
+            font-size: 30px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .document h3 {
+            font-size: 20px;
+            color: white;
+            margin-top: 35px;
+            margin-bottom: 12px;
+        }
+
+        .document p {
+            color: #b8bdc8;
+            margin-bottom: 15px;
+        }
+
+        .document ul {
+            margin: 10px 0 20px 25px;
+            color: #b8bdc8;
+        }
+
+        .document li {
+            margin-bottom: 8px;
+        }
+
+        .last-updated {
+            color: #858b98;
+            font-size: 13px;
+            margin-bottom: 30px;
+        }
+
+        /* -------------------------
+           Important information cards
+        ------------------------- */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+
+            margin: 30px 0;
+        }
+
+        .card {
+            padding: 24px;
+
+            background: #181c25;
+            border: 1px solid #292e3a;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            font-size: 17px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* -------------------------
+           Agreement
+        ------------------------- */
+
+        .agreement {
+            position: sticky;
+            bottom: 20px;
+
+            background: #1a1e27;
+            border: 1px solid #343a48;
+            border-radius: 14px;
+
+            padding: 25px;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .agreement label {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+
+            color: #d2d5dd;
+            font-size: 14px;
+
+            cursor: pointer;
+        }
+
+        .agreement input {
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .continue-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .continue-button {
+            border: none;
+            border-radius: 8px;
+
+            padding: 12px 24px;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            background: #5865f2;
+            color: white;
+
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .continue-button:hover:not(:disabled) {
+            background: #4752c4;
+            transform: translateY(-1px);
+        }
+
+        .continue-button:disabled {
+            background: #383d49;
+            color: #777d89;
+            cursor: not-allowed;
+        }
+
+        /* -------------------------
+           Footer
+        ------------------------- */
+
+        footer {
+            border-top: 1px solid #272b36;
+
+            padding: 40px 24px;
+
+            text-align: center;
+
+            color: #777d89;
+            font-size: 13px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        /* -------------------------
+           Mobile
+        ------------------------- */
+
+        @media (max-width: 700px) {
+
+            .nav {
+                padding: 15px 18px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 70px 20px 50px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            main {
+                padding: 0 15px 70px;
+            }
+
+            .document {
+                padding: 25px 20px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .agreement {
+                position: static;
+            }
+
+            .continue-container {
+                justify-content: stretch;
+            }
+
+            .continue-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="nav">
+
+        <div class="logo">
+            Discord Bot Application
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="#terms">Terms</a>
+            </li>
+
+            <li>
+                <a href="#privacy">Privacy</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        Before You Continue
+    </h1>
+
+    <p>
+        Please review our Terms of Service and Privacy Policy
+        before using this application.
+    </p>
+
+    <div class="notice">
+
+        <strong>Important:</strong>
+
+        By using this application, you acknowledge that you have
+        read and understood the Terms of Service and Privacy Policy
+        below. You must agree to these terms before continuing.
+
+    </div>
+
+</section>
+
+
+<main>
+
+    <!-- =========================
+         TERMS OF SERVICE
+    ========================== -->
+
+    <section id="terms" class="document">
+
+        <h2>Terms of Service</h2>
+
+        <div class="last-updated">
+            Last Updated: September 3, 2026
+        </div>
+
+        <p>
+            These Terms of Service ("Terms") govern your use of
+            Discord Bot Application ("the Application"), including
+            any Discord bot, website, dashboard, API, services,
+            features, and related software provided by the
+            Application operator ("we", "us", or "our").
+        </p>
+
+        <p>
+            By accessing or using the Application, you agree to
+            these Terms. If you do not agree with these Terms,
+            you must not use the Application.
+        </p>
+
+
+        <h3>1. Eligibility</h3>
+
+        <p>
+            You must have the legal capacity to agree to these
+            Terms and must comply with the rules and requirements
+            applicable to your use of Discord and other services
+            connected to the Application.
+        </p>
+
+
+        <h3>2. Description of the Service</h3>
+
+        <p>
+            The Application provides software functionality
+            through Discord and potentially through a website,
+            dashboard, API, or other interfaces.
+        </p>
+
+        <p>
+            Features may include, but are not limited to:
+        </p>
+
+        <ul>
+            <li>Discord server management</li>
+            <li>Automated commands</li>
+            <li>Moderation functionality</li>
+            <li>Notifications</li>
+            <li>Logging</li>
+            <li>Server configuration</li>
+            <li>Other bot-related functionality</li>
+        </ul>
+
+        <p>
+            Features may be changed, added, suspended, or removed
+            at any time.
+        </p>
+
+
+        <h3>3. Discord</h3>
+
+        <p>
+            The Application operates in connection with Discord.
+            Your use of Discord remains subject to
+            Discord's own Terms of Service, Community Guidelines,
+            Privacy Policy, and other applicable policies.
+        </p>
+
+        <p>
+            We are not affiliated with, endorsed by, or sponsored
+            by Discord Inc. unless explicitly stated otherwise.
+        </p>
+
+
+        <h3>4. Bot Permissions</h3>
+
+        <p>
+            When adding the bot to a Discord server, you may be
+            asked to grant certain permissions.
+        </p>
+
+        <p>
+            You should review the requested permissions before
+            authorizing the bot.
+        </p>
+
+        <p>
+            Server administrators are responsible for ensuring
+            that the permissions granted to the bot are
+            appropriate for their server.
+        </p>
+
+
+        <h3>5. Acceptable Use</h3>
+
+        <p>
+            You agree not to use the Application to:
+        </p>
+
+        <ul>
+            <li>Break applicable laws or regulations.</li>
+            <li>Violate Discord's policies.</li>
+            <li>Harass, threaten, or abuse other users.</li>
+            <li>Distribute malware or malicious software.</li>
+            <li>Attempt to gain unauthorized access to systems.</li>
+            <li>Interfere with the operation of the Application.</li>
+            <li>Abuse, overload, or intentionally disrupt the service.</li>
+            <li>Attempt to bypass security mechanisms.</li>
+            <li>Use the Application for fraudulent or deceptive activity.</li>
+        </ul>
+
+
+        <h3>6. User Responsibility</h3>
+
+        <p>
+            You are responsible for your use of the Application
+            and for activity performed through your Discord
+            account or server.
+        </p>
+
+        <p>
+            Server owners and administrators are responsible for
+            configuring the bot appropriately and determining
+            which users have access to its features.
+        </p>
+
+
+        <h3>7. Availability</h3>
+
+        <p>
+            We attempt to keep the Application available and
+            functional, but we do not guarantee uninterrupted
+            availability.
+        </p>
+
+        <p>
+            The service may become temporarily unavailable due to
+            maintenance, technical problems, third-party outages,
+            network problems, or circumstances outside our control.
+        </p>
+
+
+        <h3>8. Third-Party Services</h3>
+
+        <p>
+            The Application may interact with third-party services,
+            including Discord and external APIs.
+        </p>
+
+        <p>
+            We are not responsible for the availability,
+            functionality, policies, or actions of third-party
+            services.
+        </p>
+
+
+        <h3>9. Intellectual Property</h3>
+
+        <p>
+            Unless otherwise stated, the Application's software,
+            source code, branding, design, documentation, and
+            original content are owned by or licensed to us.
+        </p>
+
+        <p>
+            You may not copy, redistribute, reverse engineer,
+            resell, or otherwise exploit the Application except
+            where permitted by applicable law or an explicit
+            license.
+        </p>
+
+
+        <h3>10. Termination</h3>
+
+        <p>
+            We may suspend or terminate access to the Application
+            if we reasonably believe that you have violated these
+            Terms, abused the service, or created a security or
+            operational risk.
+        </p>
+
+        <p>
+            You may stop using the Application at any time.
+        </p>
+
+
+        <h3>11. Disclaimer</h3>
+
+        <p>
+            The Application is provided on an "as is" and
+            "as available" basis to the maximum extent permitted
+            by applicable law.
+        </p>
+
+        <p>
+            We do not guarantee that the Application will always
+            be accurate, reliable, secure, available, or suitable
+            for a particular purpose.
+        </p>
+
+
+        <h3>12. Limitation of Liability</h3>
+
+        <p>
+            To the maximum extent permitted by applicable law,
+            we will not be liable for indirect, incidental,
+            consequential, special, or punitive damages resulting
+            from your use of or inability to use the Application.
+        </p>
+
+
+        <h3>13. Changes to These Terms</h3>
+
+        <p>
+            We may modify these Terms from time to time.
+            Updated Terms will be published on this page.
+        </p>
+
+        <p>
+            Your continued use of the Application after changes
+            become effective constitutes acceptance of the updated
+            Terms, where permitted by applicable law.
+        </p>
+
+
+        <h3>14. Governing Law</h3>
+
+        <p>
+            These Terms shall be governed by the applicable laws
+            of the jurisdiction in which the Application operator
+            is established, unless otherwise required by law.
+        </p>
+
+
+        <h3>15. Contact</h3>
+
+        <p>
+            If you have questions regarding these Terms, please
+            contact the Application operator through the designated
+            support or contact channel.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         PRIVACY POLICY
+    ========================== -->
+
+    <section id="privacy" class="document">
+
+        <h2>Privacy Policy</h2>
+
+        <div class="last-updated">
+            Last Updated: September 3, 2026
+        </div>
+
+        <p>
+            This Privacy Policy explains how Discord Bot
+            Application may collect, use, store, and protect
+            information when you use the Application.
+        </p>
+
+
+        <h3>1. Information We May Collect</h3>
+
+        <p>
+            Depending on how you use the Application, we may
+            process information such as:
+        </p>
+
+        <ul>
+            <li>Discord user ID</li>
+            <li>Discord server ID</li>
+            <li>Discord channel ID</li>
+            <li>Discord role ID</li>
+            <li>Discord username or display name</li>
+            <li>Bot configuration settings</li>
+            <li>Commands sent to the bot</li>
+            <li>Application configuration data</li>
+            <li>Technical logs and error information</li>
+            <li>IP address or similar technical information where necessary for website operation</li>
+        </ul>
+
+        <p>
+            The actual information collected depends on the
+            features enabled and used by the Application.
+        </p>
+
+
+        <h3>2. Information We Do Not Intentionally Collect</h3>
+
+        <p>
+            We do not intentionally request or collect sensitive
+            personal information unless it is specifically required
+            for a clearly disclosed feature.
+        </p>
+
+        <p>
+            Users should not provide passwords, authentication
+            tokens, payment card information, private keys,
+            recovery phrases, or other highly sensitive credentials
+            through the Application.
+        </p>
+
+
+        <h3>3. How Information Is Used</h3>
+
+        <p>
+            Information may be used to:
+        </p>
+
+        <ul>
+            <li>Provide and operate the Application.</li>
+            <li>Configure Discord servers.</li>
+            <li>Execute bot commands.</li>
+            <li>Provide requested features.</li>
+            <li>Maintain security.</li>
+            <li>Detect abuse or misuse.</li>
+            <li>Diagnose technical problems.</li>
+            <li>Improve reliability and functionality.</li>
+        </ul>
+
+
+        <h3>4. Discord Information</h3>
+
+        <p>
+            Because the Application operates through Discord,
+            it may process information made available through
+            Discord's APIs or events.
+        </p>
+
+        <p>
+            We only intend to process information reasonably
+            necessary for the Application's functionality.
+        </p>
+
+
+        <h3>5. Data Storage</h3>
+
+        <p>
+            Information may be stored on servers or infrastructure
+            operated by us or by trusted service providers.
+        </p>
+
+        <p>
+            We take reasonable technical and organizational
+            measures to protect stored information against
+            unauthorized access, modification, disclosure, or
+            destruction.
+        </p>
+
+
+        <h3>6. Data Retention</h3>
+
+        <p>
+            We retain information only for as long as reasonably
+            necessary for the purposes described in this policy,
+            unless a longer retention period is required by law.
+        </p>
+
+        <p>
+            Configuration data may be retained while a Discord
+            server continues to use the Application.
+        </p>
+
+
+        <h3>7. Data Sharing</h3>
+
+        <p>
+            We do not sell personal information.
+        </p>
+
+        <p>
+            Information may be shared with service providers when
+            reasonably necessary to operate, maintain, secure,
+            or provide the Application.
+        </p>
+
+        <p>
+            Information may also be disclosed when required by
+            applicable law, legal process, or to protect the
+            security and rights of users or the Application.
+        </p>
+
+
+        <h3>8. Third-Party Services</h3>
+
+        <p>
+            The Application may rely on third-party services,
+            including Discord, hosting providers, databases,
+            analytics services, monitoring services, or APIs.
+        </p>
+
+        <p>
+            These services may process information according to
+            their own privacy policies and terms.
+        </p>
+
+
+        <h3>9. Cookies and Local Storage</h3>
+
+        <p>
+            The website may use cookies, local storage, session
+            storage, or similar technologies when necessary to
+            maintain sessions, preferences, authentication, or
+            application functionality.
+        </p>
+
+
+        <h3>10. Security</h3>
+
+        <p>
+            We take reasonable measures to protect information.
+            However, no Internet transmission or electronic
+            storage system can be guaranteed to be completely
+            secure.
+        </p>
+
+
+        <h3>11. Data Deletion</h3>
+
+        <p>
+            Where applicable, users or server administrators may
+            request deletion of information associated with their
+            use of the Application.
+        </p>
+
+        <p>
+            Some information may need to be retained when required
+            for security, legal, fraud-prevention, or legitimate
+            operational purposes.
+        </p>
+
+
+        <h3>12. Children's Privacy</h3>
+
+        <p>
+            The Application is not intentionally designed to
+            collect personal information from children in violation
+            of applicable privacy laws.
+        </p>
+
+
+        <h3>13. Changes to This Privacy Policy</h3>
+
+        <p>
+            We may update this Privacy Policy from time to time.
+            Changes will be published on this page with an updated
+            revision date.
+        </p>
+
+
+        <h3>14. Contact</h3>
+
+        <p>
+            Questions or requests concerning privacy can be
+            directed to the Application's designated support or
+            contact channel.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         SUMMARY
+    ========================== -->
+
+    <section class="document">
+
+        <h2>Before You Use the Application</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Terms of Service</h3>
+                <p>
+                    You must follow these Terms and all applicable
+                    Discord rules when using the Application.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Privacy</h3>
+                <p>
+                    The Application may process Discord and
+                    technical information required to provide its
+                    features.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Bot Permissions</h3>
+                <p>
+                    Review the permissions requested by the bot
+                    before adding it to your Discord server.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Your Responsibility</h3>
+                <p>
+                    You are responsible for how you configure and
+                    use the Application.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         AGREEMENT
+    ========================== -->
+
+    <section class="agreement">
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="agreement"
+            >
+
+            <span>
+                I have read and agree to the
+                <a href="#terms">Terms of Service</a>
+                and
+                <a href="#privacy">Privacy Policy</a>.
+                I understand that my use of the Application is
+                subject to these terms.
+            </span>
+
+        </label>
+
+
+        <div class="continue-container">
+
+            <button
+                id="continueButton"
+                class="continue-button"
+                disabled
+            >
+                Continue to Application
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer id="contact">
+
+    <p>
+        © 2026 Discord Bot Application
+    </p>
+
+    <p>
+        This application is not affiliated with Discord Inc.
+        unless explicitly stated otherwise.
+    </p>
+
+</footer>
+
+
+<script>
+
+    const agreement = document.getElementById("agreement");
+    const continueButton = document.getElementById("continueButton");
+
+
+    /*
+     * Enable the Continue button only after
+     * the user accepts the terms.
+     */
+
+    agreement.addEventListener("change", function () {
+
+        continueButton.disabled = !this.checked;
+
+    });
+
+
+    /*
+     * Replace this URL with the actual location
+     * of your application.
+     */
+
+    continueButton.addEventListener("click", function () {
+
+        if (!agreement.checked) {
+            return;
+        }
+
+        /*
+         * Example:
+         *
+         * window.location.href = "/app";
+         *
+         * Or:
+         *
+         * window.location.href = "https://example.com/app";
+         */
+
+        window.location.href = "/app";
+
+    });
+
+</script>
+
+</body>
+</html>
